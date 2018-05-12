@@ -15,6 +15,7 @@ The installation process will depend on your operating sistem. The official docs
 2. Install Docker compose: https://docs.docker.com/compose/install/
 
 > Note: As the docs If you are using Windows 8 or previous, you should instal Docker toolbox: https://docs.docker.com/toolbox/toolbox_install_windows/.
+
 > Note 2: If you are using Windows, you do not need to install Docker compose separately.
 
 ### Build the env
@@ -35,7 +36,7 @@ docker-compose build
 docker-compose up
 ```
 
-4. Enjoy  🙌🏼☕️
+4. Enjoy 🙌🏼☕️
 ```
 http://localhost:5000/
 ```
