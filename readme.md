@@ -30,7 +30,12 @@ cd moreno/
 docker-compose build
 ```
 
-3. Run the app 🙌🏼
+3. Run the app 🚀
 ```
 docker-compose up
+```
+
+4. Enjoy  🙌🏼☕️
+```
+http://localhost:5000/
 ```
