@@ -20,23 +20,39 @@ The installation process will depend on your operating sistem. The official docs
 
 ### Build the env
 
-1. Clone the Moreno repo
+1. Clone the Moreno repo.
 ```
 git clone git@github.com:avgvsto/moreno.git
 ```
 
-2. Build the app 🔨
+2. Build the app 🔨.
 ```
 cd moreno/
 docker-compose build
 ```
 
-3. Run the app 🚀
+3. Run the app 🚀.
 ```
 docker-compose up
 ```
 
-4. Enjoy 🙌🏼☕️
+4. Configure app ☕️.
+
+- Set the environment variables of your project.
+```
+cd moreno/
+cp .env.example .env
+nano .env
+```
+
+- Run database migrations
+```
+cd moreno/
+docker exec -it moreno_db_1 bash
+php artisan migrate
+```
+
+5. Enjoy 🙌🏼.
 ```
 http://localhost:5000/
 ```
