@@ -22,7 +22,7 @@ The installation process will depend on your operating sistem. The official docs
 
 1. Clone the Moreno repo.
 ```
-git clone git@github.com:avgvsto/moreno.git
+git clone https://github.com/avgvsto/moreno.git
 ```
 > This example uses `SSH` but you could choose `HTTPS` as well.
 
