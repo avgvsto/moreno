@@ -14,3 +14,7 @@
 $app->get('/', function () use ($app) {
     return $app->version();
 });
+
+$app->post('authors', [
+    'as' => 'authors-store', 'uses' => 'AuthorController@store'
+]);
