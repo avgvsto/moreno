@@ -18,12 +18,13 @@ The installation process will depend on your operating sistem. The official docs
 
 > Note 2: If you are using Windows, you do not need to install Docker compose separately.
 
-### Build the env
+### Build the DEV environment
 
 1. Clone the Moreno repo.
 ```
 git clone git@github.com:avgvsto/moreno.git
 ```
+> This example uses `SSH` but you could choose `HTTPS` as well.
 
 2. Build the app 🔨.
 ```
@@ -38,14 +39,14 @@ docker-compose up
 
 4. Configure app ☕️.
 
-- Set the environment variables of your project.
+Set the environment variables of your project.
 ```
 cd moreno/
 cp .env.example .env
 nano .env
 ```
 
-- Run database migrations
+Run database migrations
 ```
 cd moreno/
 docker exec -it moreno_db_1 bash
