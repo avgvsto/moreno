@@ -26,30 +26,30 @@ git clone https://github.com/avgvsto/moreno.git
 ```
 > This example uses `SSH` but you could choose `HTTPS` as well.
 
-2. Build the app 🔨.
-```
-cd moreno/
-docker-compose build
-```
+2. Configure app ☕️.
 
-3. Run the app 🚀.
-```
-docker-compose up
-```
-
-4. Configure app ☕️.
-
-Set the environment variables of your project.
+In first place, you should create the Lumen `.env` file. It contains all the environment variables for the project.
 ```
 cd moreno/
 cp .env.example .env
-nano .env
+```
+
+Edit the `.env` file and override the variables using the proper ones (ask for them to the repo owners).
+
+3. Build the app 🔨.
+```
+docker-compose build
+```
+
+4. Run the app 🚀.
+```
+docker-compose up
 ```
 
 Run database migrations
 ```
 cd moreno/
-docker exec -it moreno_db_1 bash
+docker exec -it moreno_app_1 bash
 php artisan migrate
 ```
 
