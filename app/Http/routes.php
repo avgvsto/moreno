@@ -1,5 +1,6 @@
 <?php
 
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -15,6 +16,12 @@ $app->get('/', function () use ($app) {
     return $app->version();
 });
 
-$app->post('authors', [
+$app->post('author', [
     'as' => 'authors-store', 'uses' => 'AuthorController@store'
 ]);
+
+
+
+$app->delete('author/delete/{$id}', ['uses'=>'delete','uses' => 'AuthorController@destroy']);
+
+$app->get('author/index', ['uses'=>'index','uses' => 'AuthorController@index']);

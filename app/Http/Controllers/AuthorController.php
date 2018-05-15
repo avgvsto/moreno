@@ -25,5 +25,26 @@ class AuthorController extends Controller
 
         return response()->json(['id' => $author->id]);
     }
+    public function destroy($id)
+    {
+
+        Author::destroy($id);
+        /*
+        !!No se encuentran los metodos!!
+        $author= Author::find($id);
+        $author->delete();
+        */
+
+
+        return "ok";
+    }
+
+    public function index()
+    {
+        $author=Author::all();
+
+
+        return $author;
+    }
 
 }
