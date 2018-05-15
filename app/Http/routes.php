@@ -18,3 +18,8 @@ $app->get('/', function () use ($app) {
 $app->post('authors', [
     'as' => 'authors-store', 'uses' => 'AuthorController@store'
 ]);
+
+$app->post('documents', [
+    'as' => 'documents-store', 'uses' => 'DocumentController@store'
+]);
+
