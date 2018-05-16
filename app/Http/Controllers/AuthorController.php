@@ -1,10 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Author;
 use Illuminate\Http\Request;
-
+use Illuminate\Http\Response;
 
 class AuthorController extends Controller
 {
@@ -27,24 +26,29 @@ class AuthorController extends Controller
     }
     public function destroy($id)
     {
+        try {
 
-        Author::destroy($id);
-        /*
-        !!No se encuentran los metodos!!
-        $author= Author::find($id);
+        $author = Author::where('id', $id)->firstOrFail();
         $author->delete();
-        */
-
-
-        return "ok";
+        }catch (Exception $e){
+            return "NO";
+        }
     }
 
     public function index()
     {
-        $author=Author::all();
+        $author = Author::all();
+         return Response()->json($author);
+
+    }
 
 
-        return $author;
+    public function obtener($id){
+
+        $author = Author::where('id',$id)->firstOrFail();
+
+        return response()->json($author['name']);
+
     }
 
 }

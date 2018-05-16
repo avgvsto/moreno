@@ -21,7 +21,6 @@ $app->post('author', [
 ]);
 
 
-
-$app->delete('author/delete/{$id}', ['uses'=>'delete','uses' => 'AuthorController@destroy']);
+$app->delete('author/{id}', ['uses'=>'AuthorController@destroy']);
 
 $app->get('author/index', ['uses'=>'index','uses' => 'AuthorController@index']);
