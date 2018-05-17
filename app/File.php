@@ -4,9 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Author extends Model {
+class File extends Model {
+
 
 public function Documents(){
-	return $this->hasMany(Document::class);
+
+	return $this->belongsTo(Document::class);
 }
+
 }
