@@ -27,27 +27,25 @@ class AuthorController extends Controller
     public function destroy($id)
     {
         try {
+            $autor = Author::where('id','=',$id)->get();
 
-        $author = Author::where('id', $id)->firstOrFail();
-        $author->delete();
-        }catch (Exception $e){
-            return "NO";
+            if (count($autor)>0){
+                $author = Author::where('id', $id)->firstOrFail();
+                $author->delete();
+                return response()->json(['id' => $author->id]);
+            }else{
+                return response()->json(['error' => 'Not Found'], 404);
+            }
+
+        }catch(Exception $e){
+
         }
     }
 
     public function index()
     {
-        $author = Author::all();
-         return Response()->json($author);
-
-    }
-
-
-    public function obtener($id){
-
-        $author = Author::where('id',$id)->firstOrFail();
-
-        return response()->json($author['name']);
+        $authors = Author::all();
+         return response()->json($authors);
 
     }
 
