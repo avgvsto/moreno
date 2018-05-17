@@ -36,5 +36,29 @@ class AuthorController extends Controller
 
         return response()->json(['id' => $author->id]);
     }
+    public function destroy($id)
+    {
+        try {
+            $autor = Author::where('id','=',$id)->get();
+
+            if (count($autor)>0){
+                $author = Author::where('id', $id)->firstOrFail();
+                $author->delete();
+                return response()->json(['id' => $author->id]);
+            }else{
+                return response()->json(['error' => 'Not Found'], 404);
+            }
+
+        }catch(Exception $e){
+
+        }
+    }
+
+    public function index()
+    {
+        $authors = Author::all();
+         return response()->json($authors);
+
+    }
 
 }
