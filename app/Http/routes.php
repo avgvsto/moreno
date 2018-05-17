@@ -23,3 +23,6 @@ $app->post('documents', [
     'as' => 'documents-store', 'uses' => 'DocumentController@store'
 ]);
 
+//$app->get('documents/{author_id}','DocumentController@show');
+
+$app->get('documents/{user_id}', 'DocumentController@show');

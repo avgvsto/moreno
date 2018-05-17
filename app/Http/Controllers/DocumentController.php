@@ -64,4 +64,14 @@ class DocumentController extends Controller
        return response()->json(['id' => $document->id ]);
     }
 
+    public function show($user_id)
+{
+    $Document = Document::where('user_id','=',$user_id)->get();
+
+    if (count($Document)>0) {
+        return response()->json($Document);
+    } else{
+        return response()->json(['error' => 'doesnt exist.'], 400); 
+    }
+} 
 }
