@@ -23,3 +23,4 @@ $app->post('documents', [
     'as' => 'documents-store', 'uses' => 'DocumentController@store'
 ]);
 
+$app->post('documents/{id}','DocumentController@update');
